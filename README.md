@@ -11,7 +11,7 @@ Historical OHLCV data is pulled using the yfinance API for a list of six stocks.
 
 The next section applies an SVM model on the same six stocks to generate a daily signal. yfinance data is instead pulled into separate dataframes using a custom fuction and added to a dictionary with each ticker as a key. 50 and 100 SMAs are added as features for each ticker in the dictionary as well as a binary 1,0 for positive or negative daily return. A loop interates through the dictionary and scales, trains and tests an SVM model for each ticker with a 70/30 train/test data split. A separate loop calcuates cumulative return for model and actual returns during the testing window. Graphs are plotted for each stock along with summary statistics. 
 
-### Random Forest Model
+#### Random Forest Model
 The random forest model was designed to produce trade signals that determine if a stock will go up or down tomorrow. Random forest classifiers train individual decision trees with randomized parameters and average the decision trees, making them resistant to overfitting. Random forests also pick up non-linear relationships well, which is useful when trying to predict stocks. 
 
 An initial model was created to make the prediction and estimate the accuracy. Then two functions were created to attempt to more accurately predict the status of each stock tomorrow and backtest the results of the predictions to see how well the predictors performed.
